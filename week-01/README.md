@@ -122,5 +122,6 @@ class Greeting extends Component {
 }
 
 export default Greeting;
+```
 
 # This was all I learned in my first week with Bytewise. 
