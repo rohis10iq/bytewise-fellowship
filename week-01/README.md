@@ -63,7 +63,7 @@ ReactDOM.render(
 
 ```
 
-# Day 4: React Components
+## Day 4: React Components
 
 On the fourth day, I learned about React components. Components are the building blocks of a React application.
 
@@ -97,7 +97,7 @@ class Welcome extends React.Component {
 }
 ```
 
-## Example of a Functional Component
+### Example of a Functional Component
 
 ```jsx
 
@@ -110,7 +110,7 @@ export default Greeting;
 
 ```
 
-## Example of a Class Component
+### Example of a Class Component
 ```jsx
 
 import React, { Component } from 'react';
