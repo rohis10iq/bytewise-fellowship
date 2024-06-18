@@ -61,6 +61,8 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+```
+
 # Day 4: React Components
 
 On the fourth day, I learned about React components. Components are the building blocks of a React application.
