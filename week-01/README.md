@@ -17,7 +17,7 @@ On the first day, I revisited the basics of web development:
 
 On the second day, I learned how to set up a React application using the `create-react-app` command in VS Code.
 
-### Steps to Create a React App
+## Steps to Create a React App
 1. Install Node.js and npm if not already installed.
 2. Open VS Code and open a new terminal.
 3. Run the following command to create a new React application:
