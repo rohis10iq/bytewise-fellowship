@@ -23,13 +23,13 @@ On the second day, I learned how to set up a React application using the `create
 3. Run the following command to create a new React application:
 
     ```bash
-    npx create-react-app my-static-app
+    npx create-react-app my-new-app
     ```
 
 4. Navigate to the project directory:
 
     ```bash
-    cd my-static-app
+    cd my-new-app
     ```
 
 5. Start the development server:
