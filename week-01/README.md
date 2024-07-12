@@ -2,8 +2,6 @@
 
 Welcome to my journey of learning React JS as part of the Bytewise fellowship. This repository documents my progress and what I've learned each day.
 
-This is Week 01:
-
 ## Week 01:
 
 ## Day 1: HTML, CSS, JS Revised and Refreshed
