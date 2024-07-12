@@ -173,7 +173,7 @@ export default App;
 ```jsx
 import React from 'react';
 
-function App() {
+function App(){
   const user = {
     name: 'Alice',
     age: 30,
