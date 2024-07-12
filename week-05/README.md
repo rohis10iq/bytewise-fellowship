@@ -154,7 +154,7 @@ export default App;
 import React from 'react';
 import { motion } from 'framer-motion';
 
-function FadeInExample() {
+function FadeInExample(){
   return(
     <motion.div
       initial={{ opacity: 0 }}

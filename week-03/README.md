@@ -180,7 +180,7 @@ function App(){
     email: 'alice@example.com'
   };
 
-  return (
+  return(
     <div>
       <p>Name: {user.name}</p>
       <p>Age: {user.age}</p>

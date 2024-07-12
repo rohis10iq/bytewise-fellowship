@@ -72,7 +72,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 function App(){
-  return (
+  return(
     <Router>
       <Switch>
         <Route path="/" exact component={Home} />
