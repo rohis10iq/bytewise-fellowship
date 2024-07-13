@@ -168,6 +168,6 @@ function FadeInExample(){
 
 export default FadeInExample;
 ```
-#### This concludes what I learned in my 5th week with Bytewise.
+
 
 
