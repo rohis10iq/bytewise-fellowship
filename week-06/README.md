@@ -113,4 +113,7 @@ ReactDOM.render(
 #### Recoil: 
 - A state management library from Facebook that provides a way to share state across components and derive state based on other state.
 
+### Day 2: Global State Management with useContext() 
+
+####
 
