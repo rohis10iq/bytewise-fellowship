@@ -319,3 +319,22 @@ The Context API in React provides a way to pass data through the component tree 
   - Not as performant for frequently changing state due to re-rendering.
   - May lead to overuse and complicated state management if not used properly.
 
+### Day 4: Third Party Options for Global State Management
+
+#### 1. Redux
+- **Description**: A popular state management library that uses a centralized store to manage the state of an application. It provides predictable state updates and a great developer experience with tools like Redux DevTools.
+
+#### 2. MobX
+- **Description**: A state management library that makes state management simple and scalable by using observables. It provides reactive state management with less boilerplate code compared to Redux.
+
+#### 3. Recoil
+- **Description**: A state management library developed by Facebook that allows for fine-grained control over state management. It integrates seamlessly with React and offers features like atom-based state management and selectors for derived state.
+
+#### 4. Zustand
+- **Description**: A small, fast, and scalable state management solution that uses hooks. It provides a minimalistic API and is known for its simplicity and ease of use.
+
+#### 5. Jotai
+- **Description**: A primitive and flexible state management library that uses atoms for state. It provides a simple and scalable way to manage state with minimal boilerplate.
+
+#### 6. Effector
+- **Description**: A reactive state management library that provides a way to manage complex state logic with ease. It focuses on simplicity, predictability, and performance.
