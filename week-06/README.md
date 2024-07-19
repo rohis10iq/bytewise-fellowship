@@ -113,7 +113,109 @@ ReactDOM.render(
 #### Recoil: 
 - A state management library from Facebook that provides a way to share state across components and derive state based on other state.
 
-### Day 2: Global State Management with useContext() 
+### Day 2: Global State Management with useContext()
 
-#### useContext()
+#### Introduction to useContext()
+
+The `useContext` hook in React provides a way to access the context directly without having to wrap components with the `Context.Consumer` component. It's useful for managing global state and sharing data across components.
+
+#### Setting Up Context
+
+1. **Create a Context**: Use `React.createContext()` to create a context object.
+
+    ```jsx
+    import React, { createContext, useState } from 'react';
+
+    const MyContext = createContext();
+    ```
+
+2. **Create a Context Provider**: This component will hold the global state and provide it to its children.
+
+    ```jsx
+    function MyProvider({ children }) {
+      const [state, setState] = useState('Initial State');
+
+      return (
+        <MyContext.Provider value={{ state, setState }}>
+          {children}
+        </MyContext.Provider>
+      );
+    }
+
+    export default MyProvider;
+    ```
+
+3. **Consume Context in Components**: Use `useContext` to access the context value in functional components.
+
+    ```jsx
+    import React, { useContext } from 'react';
+    import MyContext from './MyContext'; // Import your context
+
+    function MyComponent() {
+      const { state, setState } = useContext(MyContext);
+
+      return (
+        <div>
+          <p>Current State: {state}</p>
+          <button onClick={() => setState('Updated State')}>Update State</button>
+        </div>
+      );
+    }
+
+    export default MyComponent;
+    ```
+
+#### Example Usage
+
+1. **App Component**: Wrap your components with the `MyProvider` to provide context.
+
+    ```jsx
+    import React from 'react';
+    import MyProvider from './MyProvider';
+    import MyComponent from './MyComponent';
+
+    function App() {
+      return (
+        <MyProvider>
+          <MyComponent />
+        </MyProvider>
+      );
+    }
+
+    export default App;
+    ```
+
+2. **Component with Context**: Access and update the context value.
+
+    ```jsx
+    import React, { useContext } from 'react';
+    import MyContext from './MyContext';
+
+    function MyComponent() {
+      const { state, setState } = useContext(MyContext);
+
+      return (
+        <div>
+          <p>Current State: {state}</p>
+          <button onClick={() => setState('Updated State')}>Update State</button>
+        </div>
+      );
+    }
+
+    export default MyComponent;
+    ```
+
+#### Pros and Cons
+
+- **Pros**:
+  - Simplifies passing data through the component tree.
+  - Useful for global state management and sharing state between deeply nested components.
+  - Reduces the need for prop drilling.
+
+- **Cons**:
+  - Not as performant for frequently changing state due to re-rendering.
+  - May lead to overuse and complicated state management if not used properly.
+
+This concludes what I learned about global state management with `useContext()` on Day 2.
+
 
