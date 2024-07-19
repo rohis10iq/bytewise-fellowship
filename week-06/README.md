@@ -338,3 +338,139 @@ The Context API in React provides a way to pass data through the component tree 
 
 #### 6. Effector
 - **Description**: A reactive state management library that provides a way to manage complex state logic with ease. It focuses on simplicity, predictability, and performance.
+
+### Day 5: Basic Introduction to Redux and Recoil
+
+#### Redux
+
+##### What is Redux?
+Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments, and are easy to test. While it can be used with any JavaScript framework or library, it is most commonly used with React.
+
+##### Key Concepts
+- **Store**: The single source of truth for your application state.
+- **Actions**: Plain JavaScript objects that describe changes in the state.
+- **Reducers**: Functions that determine how the state is updated based on actions.
+
+##### Basic Usage Example
+
+1. **Install Redux and React-Redux**:
+    ```bash
+    npm install redux react-redux
+    ```
+
+2. **Create a Redux Store**:
+    ```jsx
+    import { createStore } from 'redux';
+
+    const initialState = { count: 0 };
+
+    function counterReducer(state = initialState, action) {
+      switch (action.type) {
+        case 'INCREMENT':
+          return { count: state.count + 1 };
+        case 'DECREMENT':
+          return { count: state.count - 1 };
+        default:
+          return state;
+      }
+    }
+
+    const store = createStore(counterReducer);
+    ```
+
+3. **Use Redux in React Components**:
+    ```jsx
+    import React from 'react';
+    import { Provider, useDispatch, useSelector } from 'react-redux';
+    import store from './store'; // your Redux store
+
+    function Counter() {
+      const count = useSelector((state) => state.count);
+      const dispatch = useDispatch();
+
+      return (
+        <div>
+          <p>{count}</p>
+          <button onClick={() => dispatch({ type: 'INCREMENT' })}>+</button>
+          <button onClick={() => dispatch({ type: 'DECREMENT' })}>-</button>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <Provider store={store}>
+          <Counter />
+        </Provider>
+      );
+    }
+
+    export default App;
+    ```
+
+#### Recoil
+
+##### What is Recoil?
+Recoil is a state management library for React applications developed by Facebook. It provides a way to manage both local and global state with minimal boilerplate, and integrates seamlessly with React's concurrent mode.
+
+##### Key Concepts
+- **Atoms**: Units of state that can be read from and written to from any component.
+- **Selectors**: Functions that compute derived state based on atoms or other selectors.
+
+##### Basic Usage Example
+
+1. **Install Recoil**:
+    ```bash
+    npm install recoil
+    ```
+
+2. **Create Recoil Atoms and Selectors**:
+    ```jsx
+    import { atom, selector } from 'recoil';
+
+    const countState = atom({
+      key: 'countState', // unique ID
+      default: 0, // default value
+    });
+
+    const doubleCountState = selector({
+      key: 'doubleCountState', // unique ID
+      get: ({ get }) => {
+        const count = get(countState);
+        return count * 2;
+      },
+    });
+    ```
+
+3. **Use Recoil in React Components**:
+    ```jsx
+    import React from 'react';
+    import { RecoilRoot, useRecoilState, useRecoilValue } from 'recoil';
+    import { countState, doubleCountState } from './state'; // your atoms and selectors
+
+    function Counter() {
+      const [count, setCount] = useRecoilState(countState);
+      const doubleCount = useRecoilValue(doubleCountState);
+
+      return (
+        <div>
+          <p>Count: {count}</p>
+          <p>Double Count: {doubleCount}</p>
+          <button onClick={() => setCount(count + 1)}>+</button>
+          <button onClick={() => setCount(count - 1)}>-</button>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <RecoilRoot>
+          <Counter />
+        </RecoilRoot>
+      );
+    }
+
+    export default App;
+    ```
+
+#### This was all I learned in Week 06.
