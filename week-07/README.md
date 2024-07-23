@@ -29,7 +29,47 @@
   - Can lead to more complex state management.
   - Potential for unnecessary re-renders if not managed properly.
 
-**Conclusion**: Use local state for component-specific data and global state for data that needs to be shared across multiple components.
 
-This concludes what I learned about when to use global and local states on Day 1.
+### Day 02: React Error Boundaries
+
+#### Introduction to Error Boundaries
+- Error boundaries are a React feature that lets you handle JavaScript errors in components gracefully. 
+- They catch errors in the rendering phase, lifecycle methods, and constructors of the entire tree below them.
+
+#### Creating an Error Boundary
+To create an error boundary, you need to create a class component that implements `componentDidCatch` and `getDerivedStateFromError` methods.
+
+```jsx
+import React, { Component } from 'react';
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render shows the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.error("Error caught by ErrorBoundary: ", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // You can render any custom fallback UI
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children; 
+  }
+}
+
+export default ErrorBoundary;
+
+```
+
 
