@@ -473,4 +473,4 @@ Recoil is a state management library for React applications developed by Faceboo
     export default App;
     ```
 
-#### This was all I learned in Week 06.
+#### This was all for Week 06.
