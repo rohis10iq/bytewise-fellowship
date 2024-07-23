@@ -71,5 +71,22 @@ class ErrorBoundary extends Component {
 export default ErrorBoundary;
 
 ```
+#### Using an Error Boundary
+- Wrap the components you want to monitor with the `ErrorBoundary` component.
 
+``jsx
+import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+import MyComponent from './MyComponent';
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <MyComponent />
+    </ErrorBoundary>
+  );
+}
+
+export default App;
+```
 
