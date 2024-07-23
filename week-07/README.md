@@ -74,7 +74,7 @@ export default ErrorBoundary;
 #### Using an Error Boundary
 - Wrap the components you want to monitor with the `ErrorBoundary` component.
 
-``jsx
+```jsx
 import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import MyComponent from './MyComponent';
@@ -89,4 +89,11 @@ function App() {
 
 export default App;
 ```
+#### Key Points
+- Error boundaries do not catch errors for:
+  - Event handlers
+  - Asynchronous code (e.g., setTimeout or requestAnimationFrame callbacks)
+  - Server-side rendering
+  - Errors thrown in the error boundary itself (rather than its children)
+  - Use error boundaries to provide a better user experience by displaying fallback UI.
 
