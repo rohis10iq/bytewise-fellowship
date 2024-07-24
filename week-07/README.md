@@ -174,6 +174,6 @@ export default MyComponent;
 
 #### Key Points
 
--Lifecycle methods provide hooks to run code at specific points in a component's life.
--Functional components use hooks like useEffect to handle side effects instead of lifecycle methods.
+- Lifecycle methods provide hooks to run code at specific points in a component's life.
+- unctional components use hooks like useEffect to handle side effects instead of lifecycle methods.
 
