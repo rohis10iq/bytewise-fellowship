@@ -106,6 +106,7 @@ In React, the component lifecycle refers to the sequence of methods that are inv
 #### Lifecycle Methods in Class Components
 
 1. **Mounting**: Methods called when a component is being created and inserted into the DOM.
+
    - `constructor()`: Initializes state and binds methods.
    - `static getDerivedStateFromProps()`: Updates state based on props before rendering.
    - `render()`: Outputs the JSX of the component.
