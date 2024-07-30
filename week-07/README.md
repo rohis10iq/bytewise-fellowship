@@ -178,3 +178,72 @@ export default MyComponent;
 - Lifecycle methods provide hooks to run code at specific points in a component's life.
 - unctional components use hooks like useEffect to handle side effects instead of lifecycle methods.
 
+#### Day 04: Higher Order Components
+
+#### Introduction to Higher Order Components (HOCs)
+Higher Order Components (HOCs) are a pattern in React used to enhance or share component logic. An HOC is a function that takes a component and returns a new component with additional props or behavior.
+
+#### Creating an HOC
+To create an HOC, define a function that takes a component and returns a new component.
+
+```jsx
+import React from 'react';
+
+// Example HOC that adds a "loading" state
+function withLoading(WrappedComponent) {
+  return class extends React.Component {
+    state = { loading: true };
+
+    componentDidMount() {
+      // Simulate a data fetch
+      setTimeout(() => this.setState({ loading: false }), 2000);
+    }
+
+    render() {
+      // Pass down all props to the wrapped component
+      return this.state.loading ? <p>Loading...</p> : <WrappedComponent {...this.props} />;
+    }
+  };
+}
+
+export default withLoading;
+```
+
+#### Using an HOC
+- Apply the HOC to a component to enhance its behavior.
+
+```jsx
+import React from 'react';
+import withLoading from './withLoading';
+
+function MyComponent() {
+  return <div>Data loaded successfully!</div>;
+}
+
+export default withLoading(MyComponent);
+```
+
+#### Key Points
+
+- Reuse Logic: HOCs help to reuse component logic across different components.
+- Props Handling: They pass props to the wrapped component and can modify them.
+- Composition: Multiple HOCs can be composed together to enhance a component.
+
+#### Example Use Cases
+
+- Adding authentication checks.
+- Injecting data fetching logic.
+- Adding analytics tracking.
+
+#### Day 05: Some New CSS Features for Better Development Experience
+
+1. Container Queries 
+2. New Viewport Units
+3. CSS Nesting
+4. Individual Transform Properties
+5. Inset Property
+6. Accent-color Property
+7. Gap Property for Flexbox
+8. Logical Properties (Inline and Block)
+9. nth-of syntax
+10. Selector :has()
