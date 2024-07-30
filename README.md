@@ -8,5 +8,6 @@ Welcome to my journey of learning React JS as part of the Bytewise fellowship. T
 ## Week: 4 ✅
 ## Week: 5 ✅
 ## Week: 6 ✅
-## Week: 7 ⌛
+## Week: 7 ✅
+## Week: 8 ⌛
 
