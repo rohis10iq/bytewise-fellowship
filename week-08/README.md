@@ -49,3 +49,36 @@
 ###### [GitHub Skills](https://github.com/skills/introduction-to-github)
 
 
+#### Day 04: Setting Up SSH on Local Machines
+
+##### Introduction to SSH
+- **SSH (Secure Shell)**: A protocol for secure remote login and other secure network services over an insecure network.
+
+##### Setting Up SSH on Your Local Machine
+
+1. **Generate SSH Key Pair**:
+    ```bash
+    ssh-keygen -t rsa -b 4096 -C "youremail@example.com"
+    ```
+    - Follow the prompts to save the key pair and set a passphrase.
+
+2. **Add SSH Key to the SSH Agent**:
+    ```bash
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+    ```
+
+3. **Add SSH Key to GitHub**:
+    - Copy the SSH key to your clipboard:
+        ```bash
+        cat ~/.ssh/id_rsa.pub
+        ```
+    - Go to [GitHub SSH Settings](https://github.com/settings/keys) and add a new SSH key.
+
+4. **Test the SSH Connection**:
+    ```bash
+    ssh -T git@github.com
+    ```
+    - If successful, you should see a message saying you have authenticated successfully.
+
+
